@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct MyToDoAppApp: App {
+struct MyToDoApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             TodoItem.self,
@@ -27,6 +27,6 @@ struct MyToDoAppApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: TodoItem.self, inMemory: true)
+        .modelContainer(sharedModelContainer)
     }
 }
